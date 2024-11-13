@@ -1,0 +1,519 @@
+/* Estilos globales */
+body {
+    background-color: #1B1B1B; /* Gris oscuro para el fondo */
+    color: #FFF1E2; /* Color de texto claro */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Futurista */
+.navbar {
+    background: linear-gradient(135deg, #623F2B, #9F9689); /* Gradiente cálido */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil en la navbar */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    color: #B76E2D; /* Color cálido para el logo */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra sutil para el logo */
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 30px;
+}
+
+.navbar-links a {
+    color: #9F9689; /* Gris suave para los enlaces */
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #B76E2D; /* Cálido al pasar el cursor */
+    color: #FFF1E2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave al hover */
+}
+
+.navbar-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #B76E2D;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Contenido de Novelas */
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
+    color: #FFF1E2;
+}
+
+/* Contenedor de las novelas */
+.novelas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.novela-card {
+    width: 30%; /* Tres tarjetas por fila */
+    border: 1px solid #555151; /* Borde gris suave */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    background-color: #623F2B; /* Fondo cálido marrón */
+    color: #FFF1E2; /* Texto claro */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto de imagen en blanco y negro */
+.novela-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+/* Información de la novela */
+.novela-info {
+    padding: 15px;
+    background-color: #9F9689; /* Gris suave */
+    color: #1B1B1B; /* Gris oscuro para el texto */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra interna para profundidad */
+}
+
+/* Efecto de hover */
+.novela-card:hover {
+    transform: scale(1.05);
+    background-color: #B76E2D; /* Fondo cálido naranja al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más fuerte */
+}
+
+/* Al pasar el cursor sobre la tarjeta, restauramos la imagen en color */
+.novela-card:hover img {
+    filter: grayscale(0%);
+}
+
+/* Información de la novela en el hover */
+.novela-card:hover .novela-info {
+    background-color: #623F2B; /* Fondo oscuro marrón en el hover */
+    color: #FFF1E2; /* Texto claro en hover */
+}
+
+/* Estilo para el botón */
+.novela-info .btn {
+    display: inline-block;
+    background-color: #9F9689;
+    color: #1B1B1B;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.novela-info .btn:hover {
+    background-color: #B76E2D; /* Cálido al pasar el cursor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra al hover */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .novela-card {
+        width: 45%; /* 2 tarjetas por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .novela-card {
+        width: 100%; /* 1 tarjeta por fila en pantallas pequeñas */
+    }
+}
+
+/* Estilos para la página de inicio de sesión */
+body {
+    background-color: #1B1B1B; /* Fondo oscuro */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #9F9689; /* Gris suave para el fondo */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+h1 {
+    text-align: center;
+    color: #B76E2D; /* Naranja cálido para el título */
+}
+
+.error-message {
+    color: #B76E2D; /* Color cálido para los mensajes de error */
+    text-align: center;
+}
+
+label {
+    color: white;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555151;
+    border-radius: 5px;
+    background-color: #1B1B1B; /* Fondo oscuro para los inputs */
+    color: white;
+}
+
+button {
+    padding: 10px;
+    background-color: #B76E2D; /* Naranja cálido para el botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9F9689; /* Gris suave al pasar el cursor */
+}
+
+
+/* Estilos del formulario de inicio de sesión */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.error-message {
+    color: #E22227;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+    color: white;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C7080C;
+    border-radius: 5px;
+    background-color: #222B31;
+    color: white;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+    background-color: #E22227;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #C7080C;
+}
+
+
+
+/* Contenido de Novelas */
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+/* Contenedor de las novelas */
+.novelas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Tarjetas de las novelas */
+.novela-card {
+    width: 30%; /* Esto hace que haya tres tarjetas por fila */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #fff; /* Fondo blanco por defecto */
+    color: #000; /* Texto negro por defecto */
+}
+
+/* Efecto de imagen en blanco y negro */
+.novela-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: grayscale(100%); /* Aplica el filtro en blanco y negro */
+    transition: filter 0.3s ease; /* Transición para que el cambio sea suave */
+}
+
+/* Información de la novela */
+.novela-info {
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Efecto de hover */
+.novela-card:hover {
+    transform: scale(1.05); /* Agranda ligeramente la tarjeta */
+    background-color: #800000; /* Color de fondo rojizo vino */
+    color: white; /* Cambia el color del texto a blanco */
+}
+
+/* Al pasar el cursor sobre la tarjeta, restauramos la imagen en color */
+.novela-card:hover img {
+    filter: grayscale(0%); /* Elimina el filtro de blanco y negro */
+}
+
+/* Información de la novela en el hover */
+.novela-card:hover .novela-info {
+    background-color: #660000; /* Fondo oscuro para la información */
+}
+
+/* Estilo para el botón */
+.novela-info .btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.novela-info .btn:hover {
+    background-color: #0056b3;
+}
+
+/* producto */
+
+/* Contenedor principal de los detalles del producto */
+.novela-detalle-container {
+    display: flex;
+    align-items: flex-start; /* Alinea la imagen y el contenido a la parte superior */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+    background-color: rgba(128, 128, 128, 0.2); /* Fondo gris transparente */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Imagen de la novela */
+.novela-imagen img {
+    width: 300px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor sin deformarse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una ligera sombra */
+}
+
+/* Información de la novela */
+.novela-info {
+    flex: 1; /* Hace que la información ocupe el espacio restante */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco transparente para la información */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Título y descripción de la novela */
+.novela-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.novela-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Ajustes del cuerpo principal */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Barra de compra para volúmenes y cantidad */
+.barra-compra {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco transparente */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 800px;
+    margin: 0 auto; /* Centra la barra en la página */
+}
+
+.barra-compra h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.barra-compra form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.barra-compra label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.barra-compra input[type="number"] {
+    width: 80px; /* Tamaño del input de números */
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.barra-compra button {
+    background-color: #007BFF; /* Azul */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.barra-compra button:hover {
+    background-color: #0056b3;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .novela-card {
+        width: 45%; /* 2 tarjetas por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .novela-card {
+        width: 100%; /* 1 tarjeta por fila en pantallas pequeñas */
+    }
+}
+
+/* Estilos para la página de inicio de sesión */
+
+body {
+    background-color: #222B31; /* Fondo oscuro */
+    color: white; /* Color del texto */
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #440101; /* Rojo oscuro para el fondo del contenedor */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #E22227; /* Rojo brillante para los títulos */
+}
+
+.error-message {
+    color: #E22227; /* Rojo brillante para los mensajes de error */
+    text-align: center;
+}
+
+label {
+    color: white; /* Color blanco para los labels */
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C7080C; /* Naranja oscuro para los bordes */
+    border-radius: 5px;
+    background-color: #222B31; /* Fondo oscuro para los inputs */
+    color: white; /* Texto blanco en los inputs */
+}
+
+button {
+    padding: 10px;
+    background-color: #E22227; /* Rojo brillante para el botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

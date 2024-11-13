@@ -1,0 +1,85 @@
+CREATE TABLE novelas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    volumen INT NOT NULL,
+    existencias INT NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    imagen VARCHAR(255) NULL
+);
+
+
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    email VARCHAR(100),
+    password VARCHAR(255)
+);
+
+CREATE TABLE carrito (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_novela INT,
+    cantidad INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY (id_novela) REFERENCES novelas(id)
+);
+INSERT INTO novelas (titulo, volumen, existencias, precio) VALUES 
+('High School DxD', 1, 100, 299),
+('High School DxD', 2, 100, 299),
+('High School DxD', 3, 100, 299),
+('High School DxD', 4, 100, 299),
+('High School DxD', 5, 100, 299),
+('High School DxD', 6, 100, 299),
+('High School DxD', 7, 100, 299),
+('High School DxD', 8, 100, 299),
+('High School DxD', 9, 100, 299),
+('High School DxD', 10, 100, 299),
+('High School DxD', 11, 100, 299),
+('High School DxD', 12, 100, 299),
+('High School DxD', 13, 100, 299),
+('High School DxD', 14, 100, 299),
+('High School DxD', 15, 100, 299),
+('High School DxD', 16, 100, 299),
+('High School DxD', 17, 100, 299),
+('High School DxD', 18, 100, 299),
+('High School DxD', 19, 100, 299),
+('High School DxD', 20, 100, 299),
+('High School DxD', 21, 100, 299),
+('High School DxD', 22, 100, 299),
+('High School DxD', 23, 100, 299),
+('High School DxD', 24, 100, 299),
+('High School DxD', 25, 100, 299);
+
+
+INSERT INTO novelas (titulo, volumen, existencias, precio) VALUES 
+('Sword Art Online', 1, 100, 350),
+('Sword Art Online', 2, 100, 350),
+('Sword Art Online', 3, 100, 350),
+('Sword Art Online', 4, 100, 350),
+('Sword Art Online', 5, 100, 350),
+('Sword Art Online', 6, 100, 350),
+('Sword Art Online', 7, 100, 350),
+('Sword Art Online', 8, 100, 350),
+('Sword Art Online', 9, 100, 350),
+('Sword Art Online', 10, 100, 350),
+('Sword Art Online', 11, 100, 350),
+('Sword Art Online', 12, 100, 350),
+('Sword Art Online', 13, 100, 350),
+('Sword Art Online', 14, 100, 350),
+('Sword Art Online', 15, 100, 350),
+('Sword Art Online', 16, 100, 350),
+('Sword Art Online', 17, 100, 350),
+('Sword Art Online', 18, 100, 350),
+('Sword Art Online', 19, 100, 350),
+('Sword Art Online', 20, 100, 350),
+('Sword Art Online', 21, 100, 350),
+('Sword Art Online', 22, 100, 350),
+('Sword Art Online', 23, 100, 350),
+('Sword Art Online', 24, 100, 350),
+('Sword Art Online', 25, 100, 350),
+('Sword Art Online', 26, 100, 350),
+('Sword Art Online', 27, 100, 350),
+('Sword Art Online', 28, 100, 350);
+
+UPDATE novelas SET imagen = 'high_school_dxd.jpg' WHERE id = 1;
